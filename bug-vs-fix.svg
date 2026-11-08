@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="100%" role="img" aria-label="Old substring matching versus new word-boundary matching for the word hi">
+  <style>
+    .t{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+    .h{font-family:'Segoe UI',Helvetica,Arial,sans-serif}
+    .w{fill:#e9e7ff;font-size:30px}
+    .tag{font-size:17px}
+    .no{opacity:0;animation:showit 5s infinite}
+    .ok{opacity:0;animation:showit 5s infinite}
+    @keyframes showit{0%,25%{opacity:0}40%,90%{opacity:1}100%{opacity:0}}
+    .pulse{animation:pulse 1.2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.35}50%{opacity:.95}}
+  </style>
+  <rect width="760" height="360" rx="18" fill="#17152e"/>
+
+  <!-- OLD -->
+  <text class="h" x="30" y="44" font-size="22" font-weight="700" fill="#ff7b8a">✗ Before: substring match</text>
+  <text class="t" x="30" y="76" font-size="17" fill="#9d99d6">"hi" in user_input</text>
+
+  <!-- row 1: "this is cool" - 12 chars, 18px each, text starts x=20 -->
+  <g transform="translate(30 100)">
+    <rect x="0" y="0" width="700" height="62" rx="12" fill="#221f45"/>
+    <!-- "hi" = chars 1-2 -> x 38..74 -->
+    <rect class="pulse" x="38" y="10" width="36" height="40" rx="6" fill="#ff4d6d"/>
+    <text class="t w" x="29" y="42" text-anchor="middle">t</text><text class="t w" x="47" y="42" text-anchor="middle">h</text><text class="t w" x="65" y="42" text-anchor="middle">i</text><text class="t w" x="83" y="42" text-anchor="middle">s</text><text class="t w" x="119" y="42" text-anchor="middle">i</text><text class="t w" x="137" y="42" text-anchor="middle">s</text><text class="t w" x="173" y="42" text-anchor="middle">c</text><text class="t w" x="191" y="42" text-anchor="middle">o</text><text class="t w" x="209" y="42" text-anchor="middle">o</text><text class="t w" x="227" y="42" text-anchor="middle">l</text>
+    <g class="no"><text class="h tag" x="290" y="38" fill="#ff7b8a">"hi" found inside "this", so Kitty greets you</text></g>
+  </g>
+
+  <!-- row 2: "history" - 7 chars, "hi" = chars 0-1 -> x 20..56 -->
+  <g transform="translate(30 172)">
+    <rect x="0" y="0" width="700" height="62" rx="12" fill="#221f45"/>
+    <rect class="pulse" x="20" y="10" width="36" height="40" rx="6" fill="#ff4d6d"/>
+    <text class="t w" x="29" y="42" text-anchor="middle">h</text><text class="t w" x="47" y="42" text-anchor="middle">i</text><text class="t w" x="65" y="42" text-anchor="middle">s</text><text class="t w" x="83" y="42" text-anchor="middle">t</text><text class="t w" x="101" y="42" text-anchor="middle">o</text><text class="t w" x="119" y="42" text-anchor="middle">r</text><text class="t w" x="137" y="42" text-anchor="middle">y</text>
+    <g class="no"><text class="h tag" x="290" y="38" fill="#ff7b8a">"hi" found inside "history", so Kitty greets you</text></g>
+  </g>
+
+  <!-- NEW -->
+  <text class="h" x="30" y="274" font-size="22" font-weight="700" fill="#5be3a1">✓ After: word boundary</text>
+  <text class="t" x="30" y="300" font-size="17" fill="#9d99d6">re.search(r"\b(hello|hi)\b", user_input)</text>
+  <g transform="translate(30 312)">
+    <rect x="0" y="0" width="700" height="38" rx="10" fill="#221f45"/>
+    <text class="t" x="16" y="26" font-size="19" fill="#e9e7ff">this</text><text class="t" x="68" y="26" font-size="19" fill="#ff7b8a">✗</text>
+    <text class="t" x="110" y="26" font-size="19" fill="#e9e7ff">history</text><text class="t" x="202" y="26" font-size="19" fill="#ff7b8a">✗</text>
+    <text class="t" x="244" y="26" font-size="19" fill="#e9e7ff">hi</text><text class="t" x="278" y="26" font-size="19" fill="#5be3a1">✓</text>
+    <text class="t" x="320" y="26" font-size="19" fill="#e9e7ff">hello</text><text class="t" x="392" y="26" font-size="19" fill="#5be3a1">✓</text>
+    <g class="ok"><text class="h tag" x="470" y="25" fill="#5be3a1">only whole words match</text></g>
+  </g>
+</svg>
