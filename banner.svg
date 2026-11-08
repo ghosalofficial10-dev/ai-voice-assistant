@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="100%" role="img" aria-label="Kitty AI Assistant banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0c29"/>
+      <stop offset="50%" stop-color="#302b63"/>
+      <stop offset="100%" stop-color="#24243e"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff9a9e"/>
+      <stop offset="50%" stop-color="#fad0c4"/>
+      <stop offset="100%" stop-color="#a1c4fd"/>
+    </linearGradient>
+    <clipPath id="typeclip">
+      <rect x="250" y="110" width="0" height="70">
+        <animate attributeName="width" values="0;600;600;0" keyTimes="0;0.35;0.9;1" dur="8s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+  </defs>
+  <style>
+    .t{font-family:'Segoe UI',Helvetica,Arial,sans-serif}
+    .sub{fill:#c9c6ff;font-size:20px;letter-spacing:1px}
+    .chip{fill:#ffffff;fill-opacity:.12;stroke:#ffffff;stroke-opacity:.35}
+    .chiptxt{fill:#fff;font-size:15px}
+    .bubble{opacity:0;animation:pop 8s infinite}
+    .b2{animation-delay:.9s}.b3{animation-delay:1.8s}
+    @keyframes pop{0%{opacity:0;transform:translateY(12px)}8%{opacity:1;transform:translateY(0)}85%{opacity:1}95%,100%{opacity:0}}
+    .float{animation:float 3.5s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .star{animation:tw 2.4s ease-in-out infinite}
+    @keyframes tw{0%,100%{opacity:.15}50%{opacity:1}}
+  </style>
+  <rect width="900" height="300" rx="18" fill="url(#bg)"/>
+
+  <!-- twinkling stars -->
+  <g fill="#fff">
+    <circle class="star" cx="60" cy="40" r="2"/>
+    <circle class="star" cx="140" cy="250" r="1.6" style="animation-delay:.6s"/>
+    <circle class="star" cx="420" cy="30" r="2" style="animation-delay:1.1s"/>
+    <circle class="star" cx="760" cy="48" r="2.2" style="animation-delay:.3s"/>
+    <circle class="star" cx="860" cy="200" r="1.8" style="animation-delay:1.6s"/>
+    <circle class="star" cx="600" cy="270" r="1.5" style="animation-delay:.9s"/>
+  </g>
+
+  <!-- cat -->
+  <g class="float" transform="translate(40 60)">
+    <polygon points="30,60 40,10 80,45" fill="#ffb6c1"/>
+    <polygon points="170,60 160,10 120,45" fill="#ffb6c1"/>
+    <polygon points="42,50 46,24 68,44" fill="#ff8fa3"/>
+    <polygon points="158,50 154,24 132,44" fill="#ff8fa3"/>
+    <ellipse cx="100" cy="105" rx="78" ry="64" fill="#ffd1dc"/>
+    <g>
+      <ellipse cx="72" cy="98" rx="9" ry="12" fill="#2b2b3d">
+        <animate attributeName="ry" values="12;12;1;12;12" keyTimes="0;0.9;0.94;0.98;1" dur="4s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="128" cy="98" rx="9" ry="12" fill="#2b2b3d">
+        <animate attributeName="ry" values="12;12;1;12;12" keyTimes="0;0.9;0.94;0.98;1" dur="4s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="75" cy="94" r="3" fill="#fff"/><circle cx="131" cy="94" r="3" fill="#fff"/>
+    </g>
+    <polygon points="94,116 106,116 100,124" fill="#ff6f91"/>
+    <path d="M100 124 Q92 136 82 130 M100 124 Q108 136 118 130" stroke="#2b2b3d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <g stroke="#ffffff" stroke-opacity=".8" stroke-width="2" stroke-linecap="round">
+      <path d="M52 116 L16 108"><animateTransform attributeName="transform" type="rotate" values="0 52 116;-5 52 116;0 52 116" dur="2s" repeatCount="indefinite"/></path>
+      <path d="M52 124 L14 128"><animateTransform attributeName="transform" type="rotate" values="0 52 124;4 52 124;0 52 124" dur="2s" repeatCount="indefinite"/></path>
+      <path d="M148 116 L184 108"><animateTransform attributeName="transform" type="rotate" values="0 148 116;5 148 116;0 148 116" dur="2s" repeatCount="indefinite"/></path>
+      <path d="M148 124 L186 128"><animateTransform attributeName="transform" type="rotate" values="0 148 124;-4 148 124;0 148 124" dur="2s" repeatCount="indefinite"/></path>
+    </g>
+  </g>
+
+  <!-- title with typing reveal -->
+  <g clip-path="url(#typeclip)">
+    <text class="t" x="250" y="165" font-size="64" font-weight="800" fill="url(#title)">Kitty · Zia</text>
+  </g>
+  <text class="t sub" x="252" y="205">AI Assistant · keyword chatbot in Python</text>
+
+  <!-- chips -->
+  <g class="t">
+    <rect class="chip" x="252" y="228" width="112" height="32" rx="16"/><text class="chiptxt" x="308" y="249" text-anchor="middle">Python 3</text>
+    <rect class="chip" x="374" y="228" width="130" height="32" rx="16"/><text class="chiptxt" x="439" y="249" text-anchor="middle">Jupyter / Colab</text>
+    <rect class="chip" x="514" y="228" width="132" height="32" rx="16"/><text class="chiptxt" x="580" y="249" text-anchor="middle">regex matching</text>
+  </g>
+
+  <!-- chat bubbles -->
+  <g class="t">
+    <g class="bubble"><rect x="690" y="40" width="170" height="38" rx="14" fill="#a1c4fd"/><text x="775" y="65" text-anchor="middle" font-size="17" fill="#1b1b3a">hi</text></g>
+    <g class="bubble b2"><rect x="620" y="92" width="240" height="38" rx="14" fill="#ffb6c1"/><text x="740" y="117" text-anchor="middle" font-size="16" fill="#3a1b2a">Hello! I'm Kitty 🐱</text></g>
+    <g class="bubble b3"><rect x="700" y="144" width="160" height="38" rx="14" fill="#a1c4fd"/><text x="780" y="169" text-anchor="middle" font-size="17" fill="#1b1b3a">your name?</text></g>
+  </g>
+</svg>

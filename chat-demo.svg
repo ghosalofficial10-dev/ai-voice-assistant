@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" width="100%" role="img" aria-label="Animated demo of a conversation with Kitty">
+  <style>
+    .t{font-family:'Segoe UI',Helvetica,Arial,sans-serif}
+    .m{opacity:0;animation-duration:16s;animation-iteration-count:infinite;animation-timing-function:ease-out}
+    .m1{animation-name:s1}.m2{animation-name:s2}.m3{animation-name:s3}.m4{animation-name:s4}
+    .m5{animation-name:s5}.m6{animation-name:s6}.m7{animation-name:s7}.m8{animation-name:s8}
+    @keyframes s1{0%,2%{opacity:0}5%,92%{opacity:1}97%,100%{opacity:0}}
+    @keyframes s2{0%,9%{opacity:0}12%,92%{opacity:1}97%,100%{opacity:0}}
+    @keyframes s3{0%,17%{opacity:0}20%,92%{opacity:1}97%,100%{opacity:0}}
+    @keyframes s4{0%,25%{opacity:0}28%,92%{opacity:1}97%,100%{opacity:0}}
+    @keyframes s5{0%,33%{opacity:0}36%,92%{opacity:1}97%,100%{opacity:0}}
+    @keyframes s6{0%,41%{opacity:0}44%,92%{opacity:1}97%,100%{opacity:0}}
+    @keyframes s7{0%,49%{opacity:0}52%,92%{opacity:1}97%,100%{opacity:0}}
+    @keyframes s8{0%,57%{opacity:0}60%,92%{opacity:1}97%,100%{opacity:0}}
+    .dot{animation:blink 1s infinite}
+    @keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+    .me{fill:#4f8cff}.bot{fill:#2e2a55}
+    .metxt{fill:#fff;font-size:22px}.bottxt{fill:#f1eaff;font-size:22px}
+    .lbl{fill:#8f8bc9;font-size:15px}
+  </style>
+  <rect width="700" height="520" rx="18" fill="#17152e"/>
+  <rect width="700" height="58" rx="18" fill="#221f45"/>
+  <rect y="40" width="700" height="18" fill="#221f45"/>
+  <circle cx="30" cy="29" r="7" fill="#ff5f56"/><circle cx="54" cy="29" r="7" fill="#ffbd2e"/><circle cx="78" cy="29" r="7" fill="#27c93f"/>
+  <text class="t" x="350" y="36" text-anchor="middle" font-size="18" fill="#cfcaff">🐱 Kitty — live chat</text>
+
+  <!-- 1 user -->
+  <g class="t m m1"><rect class="me" x="540" y="76" width="130" height="42" rx="16"/><text class="metxt" x="605" y="105" text-anchor="middle">hi</text></g>
+  <!-- 2 bot -->
+  <g class="t m m2"><rect class="bot" x="30" y="128" width="470" height="42" rx="16"/><text class="bottxt" x="48" y="157">Hello! I'm Kitty 🐱. How can I help you?</text></g>
+  <!-- 3 user -->
+  <g class="t m m3"><rect class="me" x="410" y="186" width="260" height="42" rx="16"/><text class="metxt" x="540" y="215" text-anchor="middle">what is your name?</text></g>
+  <!-- 4 bot -->
+  <g class="t m m4"><rect class="bot" x="30" y="238" width="440" height="42" rx="16"/><text class="bottxt" x="48" y="267">My name is Kitty, your AI assistant.</text></g>
+  <!-- 5 user: the bug case -->
+  <g class="t m m5"><rect class="me" x="400" y="296" width="270" height="42" rx="16"/><text class="metxt" x="535" y="325" text-anchor="middle">history is important</text></g>
+  <!-- 6 bot: now NOT a greeting -->
+  <g class="t m m6"><rect class="bot" x="30" y="348" width="540" height="42" rx="16"/><text class="bottxt" x="48" y="377">I'm still learning. Can you ask something else?</text>
+    <text class="lbl" x="48" y="408">✅ not mistaken for a greeting anymore</text></g>
+  <!-- 7 user -->
+  <g class="t m m7"><rect class="me" x="540" y="422" width="130" height="42" rx="16"/><text class="metxt" x="605" y="451" text-anchor="middle">bye</text></g>
+  <!-- 8 bot -->
+  <g class="t m m8"><rect class="bot" x="30" y="468" width="370" height="42" rx="16"/><text class="bottxt" x="48" y="497">Goodbye! Talk to you soon 👋</text></g>
+</svg>
