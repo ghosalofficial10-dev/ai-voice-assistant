@@ -6,7 +6,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
-[![Open In Colab](https://img.shields.io/badge/Open%20in-Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/techprem324/ai-voice-assistant/blob/main/ai_voice_assistant.ipynb)
+[![Open In Colab](https://img.shields.io/badge/Open%20in-Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/techprem324/ai-voice-assistant/blob/docs/readme-and-notebook/ai_voice_assistant.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](LICENSE)
 
 [![Stars](https://img.shields.io/github/stars/techprem324/ai-voice-assistant?style=flat-square&logo=github)](https://github.com/techprem324/ai-voice-assistant/stargazers)
@@ -17,7 +17,7 @@
 
 **A tiny, readable Python chatbot you can run in one click — and a friendly place to make your first open-source contribution.** 🐱
 
-[▶ Try it in Colab](https://colab.research.google.com/github/techprem324/ai-voice-assistant/blob/main/ai_voice_assistant.ipynb) · [💬 See a chat](#-see-it-in-action) · [🛠 Run locally](#-installation--setup) · [🤝 Contribute](#-contributing)
+[▶ Try it in Colab](https://colab.research.google.com/github/techprem324/ai-voice-assistant/blob/docs/readme-and-notebook/ai_voice_assistant.ipynb) · [💬 See a chat](#-see-it-in-action) · [🛠 Run locally](#-installation--setup) · [🤝 Contribute](#-contributing)
 
 </div>
 
@@ -170,11 +170,10 @@ def kitty_chat(user_input):
 ```text
 ai-voice-assistant/
 ├── 📓 ai_voice_assistant.ipynb   # The chatbot: kitty_chat() + demo cells
-├── 🎨 assets/                    # Animated SVGs used by this README
-│   ├── banner.svg
-│   ├── chat-demo.svg
-│   ├── bug-vs-fix.svg
-│   └── divider.svg
+├── 🎨 banner.svg                 # Animated README banner
+├── 🎨 chat-demo.svg              # Animated chat example
+├── 🎨 bug-vs-fix.svg             # Bug-versus-fix visual
+├── 🎨 divider.svg                # Section divider
 ├── 📄 README.md                  # You are here
 ├── ⚖️ LICENSE                    # MIT License
 └── 🙈 .gitignore                 # Files Git should ignore
@@ -188,7 +187,7 @@ You can run Kitty with **zero setup** in Colab, or locally in a few commands.
 
 ### Option A — Google Colab (easiest)
 
-1. Click **[Open in Colab](https://colab.research.google.com/github/techprem324/ai-voice-assistant/blob/main/ai_voice_assistant.ipynb)**.
+1. Click **[Open in Colab](https://colab.research.google.com/github/techprem324/ai-voice-assistant/blob/docs/readme-and-notebook/ai_voice_assistant.ipynb)**.
 2. Run the cells from top to bottom. That's it. ✅
 
 ### Option B — Run locally
