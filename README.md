@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="Kitty · Zia — AI Assistant banner" width="100%"/>
+<img src="banner.svg" alt="Kitty · Zia — AI Assistant banner" width="100%"/>
 
 <br/>
 
@@ -21,7 +21,7 @@
 
 </div>
 
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## 📑 Table of Contents
 
@@ -39,7 +39,7 @@
 - [🗺 Roadmap](#-roadmap)
 - [📜 License & acknowledgements](#-license--acknowledgements)
 
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## ✨ What is this?
 
@@ -54,15 +54,15 @@ Both names refer to the same project. In this README the assistant is called **K
 
 > **Honest status:** today the project is a **text-based, keyword-matching chatbot** written in plain Python inside a Jupyter Notebook. It does **not** (yet) include speech recognition, voice output, or real NLP/AI models — those appear on the [roadmap](#-roadmap) as ideas, not as finished features.
 
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## 💬 See it in action
 
 <div align="center">
-  <img src="assets/chat-demo.svg" alt="Animated conversation with Kitty" width="85%"/>
+  <img src="chat-demo.svg" alt="Animated conversation with Kitty" width="85%"/>
 </div>
 
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## 🎯 Features
 
@@ -74,17 +74,17 @@ Both names refer to the same project. In this README the assistant is called **K
 | 🚪 | Says goodbye when you say **bye** | ✅ Working |
 | 🤷 | Friendly fallback for anything it doesn't understand | ✅ Working |
 | 🔠 | Case-insensitive matching (`HELLO`, `Hi`, `hello`) | ✅ Working |
-| 🎯 | Word-boundary matching for greetings & goodbye (regex) | 🔄 In review — [PR #2](https://github.com/ghosalofficial10-dev/ai-voice-assistant/pull/2) |
+| 🎯 | Word-boundary matching for greetings & goodbye (regex) | ✅ Working in this branch |
 | 🎤 | Speech recognition / voice replies | 💡 Planned |
 
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## 🐞 The greeting bug (and the fix)
 
 The original code checked greetings with a plain substring test, so `"hi"` was found *inside* other words like **t<ins>hi</ins>s** and **<ins>hi</ins>story** — and Kitty greeted you for no reason.
 
 <div align="center">
-  <img src="assets/bug-vs-fix.svg" alt="Substring matching versus word-boundary matching" width="90%"/>
+  <img src="bug-vs-fix.svg" alt="Substring matching versus word-boundary matching" width="90%"/>
 </div>
 
 ```diff
@@ -100,11 +100,9 @@ The `\b` in the regular expression means *word boundary*, so only the whole word
 | `this is interesting` | 👋 greeting *(bug)* | 🤷 fallback |
 | `history is important` | 👋 greeting *(bug)* | 🤷 fallback |
 
-**Contribution details:** commit [`97c9504`](https://github.com/techprem324/ai-voice-assistant/commit/97c9504) — `fix: prevent false greeting detection` · branch `fix/greeting-detection` · [Pull Request #2](https://github.com/ghosalofficial10-dev/ai-voice-assistant/pull/2) to the original repository (status: open, no merge conflicts).
+**Fix included:** this branch updates the notebook to use whole-word matching, so `hi` no longer matches inside words such as `this` or `history`.
 
-> Until PR #2 is merged into the original project, the fix lives on the `fix/greeting-detection` branch.
-
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## 🧩 How it works
 
@@ -148,7 +146,7 @@ def kitty_chat(user_input):
         return "I'm still learning. Can you ask something else?"
 ```
 
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## 🧰 Tech stack
 
@@ -165,7 +163,7 @@ def kitty_chat(user_input):
 - **`re` module** — part of Python's standard library, used for word-boundary matching. **No packages to install.**
 - **Jupyter Notebook / Google Colab** — where the code lives and runs.
 
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## 📁 Project structure
 
@@ -182,7 +180,7 @@ ai-voice-assistant/
 └── 🙈 .gitignore                 # Files Git should ignore
 ```
 
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## 🚀 Installation & setup
 
@@ -213,7 +211,7 @@ pip install notebook
 jupyter notebook ai_voice_assistant.ipynb
 ```
 
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## ▶️ How to run the notebook
 
@@ -236,7 +234,7 @@ Type `exit` to stop the loop.
 
 > 💡 If you see `NameError: name 'kitty_chat' is not defined`, you skipped the cell that defines the function — run the notebook from the top.
 
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## 🗨️ Example conversations
 
@@ -265,9 +263,9 @@ You: bye
 Kitty: Goodbye! Talk to you soon 👋
 ```
 
-> Notice that `history` and `this` no longer trigger a greeting — that is the fix from [PR #2](https://github.com/ghosalofficial10-dev/ai-voice-assistant/pull/2).
+> Notice that `history` and `this` no longer trigger a greeting — whole-word matching prevents those false positives.
 
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## 🤝 Contributing
 
@@ -312,7 +310,7 @@ git push origin feat/my-awesome-change
 
 Not sure where to start? Open an [issue](https://github.com/techprem324/ai-voice-assistant/issues) and ask — questions are welcome. 💜
 
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## 🗺 Roadmap
 
@@ -320,7 +318,7 @@ Not sure where to start? Open an [issue](https://github.com/techprem324/ai-voice
 
 - [x] ✅ Keyword-based replies for greeting, name, mood and goodbye
 - [x] ✅ Friendly fallback reply
-- [ ] 🔄 Word-boundary greeting detection — [PR #2](https://github.com/ghosalofficial10-dev/ai-voice-assistant/pull/2)
+- [x] ✅ Word-boundary greeting detection for `hello`, `hi`, and `bye`
 - [ ] 💡 Recognise `"goodbye"` (word-boundary matching currently only matches the standalone word `bye`)
 - [ ] 💡 More intents (thanks, help, time/date, jokes)
 - [ ] 💡 Move `kitty_chat()` into a `.py` file and add automated tests
@@ -330,7 +328,7 @@ Not sure where to start? Open an [issue](https://github.com/techprem324/ai-voice
 
 > Items marked 💡 are **ideas for the future**, not features that exist today.
 
-<img src="assets/divider.svg" width="100%" alt=""/>
+<img src="divider.svg" width="100%" alt=""/>
 
 ## 📜 License & acknowledgements
 
